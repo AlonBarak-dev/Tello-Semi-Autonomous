@@ -1,0 +1,38 @@
+running egg_info
+creating build/tello_controller/tello_controller.egg-info
+writing build/tello_controller/tello_controller.egg-info/PKG-INFO
+writing dependency_links to build/tello_controller/tello_controller.egg-info/dependency_links.txt
+writing entry points to build/tello_controller/tello_controller.egg-info/entry_points.txt
+writing requirements to build/tello_controller/tello_controller.egg-info/requires.txt
+writing top-level names to build/tello_controller/tello_controller.egg-info/top_level.txt
+writing manifest file 'build/tello_controller/tello_controller.egg-info/SOURCES.txt'
+reading manifest file 'build/tello_controller/tello_controller.egg-info/SOURCES.txt'
+writing manifest file 'build/tello_controller/tello_controller.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/kcg/Desktop/AlonBarak/Tello-Controller/build/tello_controller/build
+creating /home/kcg/Desktop/AlonBarak/Tello-Controller/build/tello_controller/build/lib
+creating /home/kcg/Desktop/AlonBarak/Tello-Controller/build/tello_controller/build/lib/tello_controller
+copying tello_controller/Battery_Status.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/build/tello_controller/build/lib/tello_controller
+copying tello_controller/__init__.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/build/tello_controller/build/lib/tello_controller
+copying tello_controller/Subscriber.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/build/tello_controller/build/lib/tello_controller
+running install
+running install_lib
+creating /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller
+copying /home/kcg/Desktop/AlonBarak/Tello-Controller/build/tello_controller/build/lib/tello_controller/Battery_Status.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller
+copying /home/kcg/Desktop/AlonBarak/Tello-Controller/build/tello_controller/build/lib/tello_controller/__init__.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller
+copying /home/kcg/Desktop/AlonBarak/Tello-Controller/build/tello_controller/build/lib/tello_controller/Subscriber.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller
+byte-compiling /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller/Battery_Status.py to Battery_Status.cpython-38.pyc
+byte-compiling /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller/__init__.py to __init__.cpython-38.pyc
+byte-compiling /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller/Subscriber.py to Subscriber.cpython-38.pyc
+running install_data
+creating /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/share/ament_index
+creating /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/share/ament_index/resource_index
+creating /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/share/ament_index/resource_index/packages
+copying resource/tello_controller -> /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/share/ament_index/resource_index/packages
+copying package.xml -> /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/share/tello_controller
+running install_egg_info
+Copying build/tello_controller/tello_controller.egg-info to /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller-0.0.0-py3.8.egg-info
+running install_scripts
+Installing controller script to /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/tello_controller
+writing list of installed files to '/home/kcg/Desktop/AlonBarak/Tello-Controller/build/tello_controller/install.log'
