@@ -235,7 +235,7 @@ class MinimalSubscriber(Node):
                         0.5, (0, 255, 0), 2)
                     print("[INFO] ArUco marker ID: {}".format(markerID))
         
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
  
         # Convert image to binary
         _, bw = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
