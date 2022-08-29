@@ -58,7 +58,7 @@ class MinimalSubscriber(Node):
             "DICT_APRILTAG_36h11": cv2.aruco.DICT_APRILTAG_36h11
         }
 
-
+        # ROS Joy subscriber
         self.subscription = self.create_subscription(
             Joy,
             'joy',
@@ -68,12 +68,13 @@ class MinimalSubscriber(Node):
         self._rate = self.create_rate(10) # 10 Hz
         
         self.me = tello.Tello()
-        self.me.connect()
+        self.me.connect()   # connect to the Drone
         self.me.streamon()
-        
+        # prints the Battery percentage
         print("Battery percentage:", self.me.get_battery())
+        # create the video capture thread
         self.video_thread = Thread(target=self.video)
-
+        # if the battery is too low its arise an error
         if self.me.get_battery() < 10:
             raise RuntimeError("Tello rejected attemp to takeoff due to low Battery")
         
@@ -81,9 +82,15 @@ class MinimalSubscriber(Node):
         self.video_thread.start()
 
     def listener_callback(self, msg:Joy):
+        """
+            This is a Callback function for the ROS Joy topic.
+            once the controller publish data to the topic, 
+            this method sends commands to the Drone base on 
+            the data received from the controller.
+        """
         big_factor = 100
         medium_factor = 50
-
+        # extract the data from the controller
         data = list(msg.axes)
         a = -data[2] * big_factor    # Yaw
         b = data[3] * big_factor     # Forward / Backward
@@ -92,8 +99,8 @@ class MinimalSubscriber(Node):
         
         data = list(msg.buttons)
         land = data[0]      # A
-        takeoff = data[3]   # Y
-        emergency = data[2] # X
+        takeoff = data[3]   # X
+        emergency = data[2] # Y
         battery = data[1]   # B
         
         if land != 0:
@@ -116,6 +123,11 @@ class MinimalSubscriber(Node):
             self.me.send_rc_control(int(a), int(b), int(c), int(d))
 
     def detect_aruco(self, img):
+        """
+            This method detect ArUco code from all types.
+            It detect its Value, Boundaries, Center point and type.
+            it return an image with the draws.
+        """
 
         image = imutils.resize(img, width=600)
         # verify that the supplied ArUCo tag exists and is supported by
@@ -167,6 +179,10 @@ class MinimalSubscriber(Node):
 
 
     def video(self):
+        """
+            This method detects Faces/Persons and Aruco Codes.
+            It plot the video captured from the Drone and it's detected objects boundaries.
+        """
         fobj = FollowObject(self.me, MODEL=self.args.model, PROTO=self.args.proto, CONFIDENCE=self.args.dconf, DEBUG=False, DETECT=self.args.obj)
         fobj.set_tracking( HORIZONTAL=self.args.th, VERTICAL=self.args.tv,DISTANCE=self.args.td, ROTATION=self.args.tr)
 
