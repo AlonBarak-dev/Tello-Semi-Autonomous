@@ -10,9 +10,11 @@ build/tello_controller/tello_controller.egg-info/requires.txt
 build/tello_controller/tello_controller.egg-info/top_level.txt
 build/tello_controller/tello_controller.egg-info/zip-safe
 resource/tello_controller
+tello_controller/Aruco_detection.py
 tello_controller/Battery_Status.py
 tello_controller/ExtremeSubscriber.py
 tello_controller/Subscriber.py
+tello_controller/Tello_video.py
 tello_controller/XboxSubscriber.py
 tello_controller/__init__.py
 tello_controller/dnnobjectdetect.py

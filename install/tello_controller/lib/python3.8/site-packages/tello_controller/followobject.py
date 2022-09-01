@@ -200,7 +200,7 @@ class FollowObject():
 
                 # cmd = "rc {leftright} {fwdbackw} {updown} {yaw}".format(leftright=vx,fwdbackw=-dist,updown=vy,yaw=rx)
                 cmd = (int(rx), int(-dist), int(vy), int(vx))
-                self.tello.send_rc_control(int(rx), int(-dist), int(vy), int(vx))
+                # self.tello.send_rc_control(int(rx), int(-dist), int(vy), int(vx))
                 
                 if self.debug:
                    print (cmd, str(self.cycle_counter))
@@ -209,14 +209,14 @@ class FollowObject():
                 # no detection, keep position
                 # cmd = "rc {leftright} {fwdbackw} {updown} {yaw}".format(leftright=0,fwdbackw=0,updown=0,yaw=0)
                 cmd = (int(rx), int(-dist), int(vy), int(vx))
-                self.tello.send_rc_control(int(rx), int(-dist), int(vy), int(vx))
+                # self.tello.send_rc_control(int(rx), int(-dist), int(vy), int(vx))
                 self.det = None
                 
         self.cycle_counter +=1
 
 
                  
-    def draw_detections(self,img, HUD=True, ANONIMUS=False):
+    def draw_detections(self,img, ids, corners, HUD=True, ANONIMUS=False):
         """Draw detections on an image
 
         Args:
@@ -241,3 +241,12 @@ class FollowObject():
                     cv2.circle(img,(self.tp[0],self.tp[1]),3,[0,0,255],-1)
                 cv2.circle(img,(int(w/2),int(h/2)),4,[0,255,0],1)
                 cv2.line(img,(int(w/2),int(h/2)),(self.tp[0],self.tp[1]),[0,255,0],2)
+
+            
+            for id, coord in zip(ids, corners):
+                print(id)
+                coord = coord.reshape((4,2))
+                print(id)
+                cv2.putText(img, str(id), (int(w/2), int(h/2)), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2)
+                print(id)
+                print(img)

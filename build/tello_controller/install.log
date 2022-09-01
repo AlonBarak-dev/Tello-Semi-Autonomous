@@ -1,4 +1,5 @@
 /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller/dnnobjectdetect.py
+/home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller/Tello_video.py
 /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller/XboxSubscriber.py
 /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller/safethread.py
 /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller/kalman.py
@@ -8,7 +9,9 @@
 /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller/__init__.py
 /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller/Subscriber.py
 /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller/telloconnect.py
+/home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller/Aruco_detection.py
 /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller/__pycache__/dnnobjectdetect.cpython-38.pyc
+/home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller/__pycache__/Tello_video.cpython-38.pyc
 /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller/__pycache__/XboxSubscriber.cpython-38.pyc
 /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller/__pycache__/safethread.cpython-38.pyc
 /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller/__pycache__/kalman.cpython-38.pyc
@@ -18,6 +21,7 @@
 /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller/__pycache__/__init__.cpython-38.pyc
 /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller/__pycache__/Subscriber.cpython-38.pyc
 /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller/__pycache__/telloconnect.cpython-38.pyc
+/home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller/__pycache__/Aruco_detection.cpython-38.pyc
 /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/share/ament_index/resource_index/packages/tello_controller
 /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/share/tello_controller/package.xml
 /home/kcg/Desktop/AlonBarak/Tello-Controller/install/tello_controller/lib/python3.8/site-packages/tello_controller-0.0.0-py3.8.egg-info/PKG-INFO

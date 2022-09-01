@@ -66,7 +66,6 @@ class DnnObjectDetect():
 
                         tp = [detections[0][0] + detections[0][2]//2, detections[0][1] + detections[0][3]//3, area_ratio]
                 else:
-
                     bbox = (d[0,0,3:7]* np.array([w,h,w,h])).astype(int)
                     bbox = (bbox[0],bbox[1],bbox[2]-bbox[0],bbox[3]-bbox[1])
 
