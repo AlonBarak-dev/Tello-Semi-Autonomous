@@ -47,7 +47,10 @@ In the code we used opencv to detect Aruco code - feel free to use something els
 
 
 ## How to use the Repo
-
+  - Note: I've wrote the code using ROS2, meaning that I've used additional software other than Python, 
+          it is optinal to use ROS2 (Xbox controller).
+          Therefore, one can read the code itself (ROS2 is a small part) and gain understaning on the Tello API from it. <br>
+          
   ### Prerequisites
   * djitellopy - `pip install djitellopy`
   * OpenCV - `pip install opencv-python`
