@@ -1,4 +1,0 @@
-[console_scripts]
-extreme = tello_controller.ExtremeSubscriber:main
-object_track_xbox = tello_controller.XboxSubscriber:main
-
