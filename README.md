@@ -56,7 +56,7 @@ In the code we used opencv to detect Aruco code - feel free to use something els
   * OpenCV - `pip install opencv-python`
   * NumPy - `pip install numpy`
   * ROS2 foxy
-  * colcon build 
+  * colcon
 
 
   ### Build
