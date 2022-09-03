@@ -6,7 +6,7 @@ import imutils
 import sys
 from math import atan2, cos, sin, sqrt, pi
 import numpy as np
-import safethread
+from . import safethread
 
 class ArucoDetection:
 

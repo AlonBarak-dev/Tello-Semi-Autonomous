@@ -1,9 +1,9 @@
 import cv2
 import threading
 import numpy as np
-import safethread
-import kalman
-import dnnobjectdetect
+from . import safethread
+from . import kalman
+from . import dnnobjectdetect
 from djitellopy import tello
 
 

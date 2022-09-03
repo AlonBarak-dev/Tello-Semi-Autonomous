@@ -1,0 +1,56 @@
+[0.792s] Invoking command in '/home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface': PYTHONPATH=/home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/tello_controller build --build-base /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/build install --prefix /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller --record /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/install.log --single-version-externally-managed
+[0.997s] running egg_info
+[0.998s] creating build/tello_controller/tello_controller.egg-info
+[0.998s] writing build/tello_controller/tello_controller.egg-info/PKG-INFO
+[0.998s] writing dependency_links to build/tello_controller/tello_controller.egg-info/dependency_links.txt
+[0.998s] writing entry points to build/tello_controller/tello_controller.egg-info/entry_points.txt
+[0.998s] writing requirements to build/tello_controller/tello_controller.egg-info/requires.txt
+[0.998s] writing top-level names to build/tello_controller/tello_controller.egg-info/top_level.txt
+[1.000s] writing manifest file 'build/tello_controller/tello_controller.egg-info/SOURCES.txt'
+[1.032s] reading manifest file 'build/tello_controller/tello_controller.egg-info/SOURCES.txt'
+[1.033s] writing manifest file 'build/tello_controller/tello_controller.egg-info/SOURCES.txt'
+[1.033s] running build
+[1.033s] running build_py
+[1.033s] creating /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/build
+[1.033s] creating /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/build/lib
+[1.033s] creating /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/build/lib/tello_controller
+[1.034s] copying tello_controller/dnnobjectdetect.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/build/lib/tello_controller
+[1.034s] copying tello_controller/Tello_video.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/build/lib/tello_controller
+[1.034s] copying tello_controller/XboxSubscriber.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/build/lib/tello_controller
+[1.034s] copying tello_controller/safethread.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/build/lib/tello_controller
+[1.034s] copying tello_controller/kalman.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/build/lib/tello_controller
+[1.034s] copying tello_controller/followobject.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/build/lib/tello_controller
+[1.034s] copying tello_controller/__init__.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/build/lib/tello_controller
+[1.034s] copying tello_controller/Aruco_detection.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/build/lib/tello_controller
+[1.035s] running install
+[1.035s] running install_lib
+[1.036s] creating /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/python3.8/site-packages/tello_controller
+[1.036s] copying /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/build/lib/tello_controller/dnnobjectdetect.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/python3.8/site-packages/tello_controller
+[1.037s] copying /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/build/lib/tello_controller/Tello_video.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/python3.8/site-packages/tello_controller
+[1.037s] copying /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/build/lib/tello_controller/XboxSubscriber.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/python3.8/site-packages/tello_controller
+[1.037s] copying /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/build/lib/tello_controller/safethread.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/python3.8/site-packages/tello_controller
+[1.037s] copying /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/build/lib/tello_controller/kalman.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/python3.8/site-packages/tello_controller
+[1.037s] copying /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/build/lib/tello_controller/followobject.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/python3.8/site-packages/tello_controller
+[1.037s] copying /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/build/lib/tello_controller/__init__.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/python3.8/site-packages/tello_controller
+[1.037s] copying /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/build/lib/tello_controller/Aruco_detection.py -> /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/python3.8/site-packages/tello_controller
+[1.038s] byte-compiling /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/python3.8/site-packages/tello_controller/dnnobjectdetect.py to dnnobjectdetect.cpython-38.pyc
+[1.040s] byte-compiling /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/python3.8/site-packages/tello_controller/Tello_video.py to Tello_video.cpython-38.pyc
+[1.040s] byte-compiling /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/python3.8/site-packages/tello_controller/XboxSubscriber.py to XboxSubscriber.cpython-38.pyc
+[1.041s] byte-compiling /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/python3.8/site-packages/tello_controller/safethread.py to safethread.cpython-38.pyc
+[1.041s] byte-compiling /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/python3.8/site-packages/tello_controller/kalman.py to kalman.cpython-38.pyc
+[1.042s] byte-compiling /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/python3.8/site-packages/tello_controller/followobject.py to followobject.cpython-38.pyc
+[1.043s] byte-compiling /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/python3.8/site-packages/tello_controller/__init__.py to __init__.cpython-38.pyc
+[1.043s] byte-compiling /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/python3.8/site-packages/tello_controller/Aruco_detection.py to Aruco_detection.cpython-38.pyc
+[1.044s] running install_data
+[1.045s] creating /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/share/ament_index
+[1.045s] creating /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/share/ament_index/resource_index
+[1.045s] creating /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/share/ament_index/resource_index/packages
+[1.045s] copying resource/tello_controller -> /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/share/ament_index/resource_index/packages
+[1.046s] copying package.xml -> /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/share/tello_controller
+[1.046s] running install_egg_info
+[1.047s] Copying build/tello_controller/tello_controller.egg-info to /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/python3.8/site-packages/tello_controller-0.0.0-py3.8.egg-info
+[1.048s] running install_scripts
+[1.065s] Installing extreme script to /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/tello_controller
+[1.065s] Installing object_track_xbox script to /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/tello_controller
+[1.065s] writing list of installed files to '/home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/install.log'
+[1.090s] Invoked command in '/home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface' returned '0': PYTHONPATH=/home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/tello_controller build --build-base /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/build install --prefix /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/install/tello_controller --record /home/kcg/Desktop/AlonBarak/Tello-Controller/ROS2-Interface/build/tello_controller/install.log --single-version-externally-managed
