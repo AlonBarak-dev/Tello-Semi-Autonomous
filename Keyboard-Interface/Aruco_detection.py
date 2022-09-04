@@ -2,11 +2,11 @@ import threading
 from typing import List
 import cv2
 import argparse
-import imutils
 import sys
 from math import atan2, cos, sin, sqrt, pi
 import numpy as np
 import safethread
+import imutils
 
 class ArucoDetection:
 

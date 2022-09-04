@@ -66,6 +66,8 @@ class MinimalSubscriber():
         self.me = tello.Tello()
         self.me.connect()   
 
+        self.img = None
+
         # prints the Battery percentage
         print("Battery percentage:", self.me.get_battery())
         
@@ -81,6 +83,9 @@ class MinimalSubscriber():
         self.streamQ = FileVideoStreamTello(self.me)
         self.streamQ.start()
         self.video_thread.start()
+
+        self.draw_thread = Thread(target=self.draw)
+        self.draw_thread.start()
         
 
     def keyboard_control(self):
@@ -159,27 +164,30 @@ class MinimalSubscriber():
             This method detects Faces/Persons and Aruco Codes.
             It plot the video captured from the Drone and it's detected objects boundaries.
         """
-        fobj = FollowObject(self.me, MODEL=self.args.model, PROTO=self.args.proto, CONFIDENCE=self.args.dconf, DEBUG=False, DETECT=self.args.obj)
-        fobj.set_tracking( HORIZONTAL=self.args.th, VERTICAL=self.args.tv,DISTANCE=self.args.td, ROTATION=self.args.tr)
 
         while True:
             try:
                 img = self.streamQ.read()
                 # wait for valid frame
-                # if img is None: continue
                 imghud = img.copy()
-                fobj.set_image_to_process(img)
                 self.aruco.set_image_to_process(img)
-                ids, corners = self.aruco.draw_detection(image=imghud)
-                fobj.draw_detections(imghud,ids, corners, ANONIMUS=False)
+                self.ids, self.corners = self.aruco.draw_detection(image=imghud)
+                self.img = imghud
                 
             except Exception:
                 break
             
             cv2.imshow("CleanTello", img)
-            cv2.imshow("TelloCamera",imghud)
+            cv2.imshow("TelloCamera",self.img)
             k = cv2.waitKey(1)
 
+    def draw(self):
+        while True:
+            if self.img is not None:
+                h,w = self.img.shape[:2]
+                for id, coord in zip(self.ids, self.corners):
+                        coord = coord.reshape((4,2))
+                        cv2.putText(self.img, str(id), (int(w/2), int(h/2)), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2)
 
 if __name__ == '__main__':
     tello = MinimalSubscriber()
