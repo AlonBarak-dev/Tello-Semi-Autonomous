@@ -57,8 +57,13 @@ In the code we used opencv to detect Aruco code - feel free to use something els
   * NumPy - `pip install numpy`
   * ROS2 foxy
   * colcon
-
-
+  
+  ## ROS2 Interface
+  
+  ```ruby
+  cd ROS2-Interface
+  ```
+  
   ### Build
   In the directory of your package, use colcon to build the package:
   ```ruby
@@ -81,7 +86,16 @@ In the code we used opencv to detect Aruco code - feel free to use something els
   ```ruby
   ros2 run tello_controller object_track_xbox
   ```
-
+     
+  ## Python only (Keyboard) Interface
+  
+  ```ruby
+  cd Keyboard-Interface
+  ```
+  
+  ```ruby
+  sudo python3 keyboardControl.py
+  ```
 
 #### Helped me in the making of this Repository:
 - https://github.com/fvilmos/tello_object_tracking <br>
