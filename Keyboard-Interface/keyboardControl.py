@@ -133,9 +133,9 @@ class MinimalSubscriber():
             
             # Up / Down
             elif keyboard.is_pressed('up'):
-                a = 0.5 * medium_factor
+                c = 0.5 * medium_factor
             elif keyboard.is_pressed("down"):
-                a = -0.5 * medium_factor
+                c = -0.5 * medium_factor
             
             # Left / Right
             elif keyboard.is_pressed('left'):
@@ -151,9 +151,9 @@ class MinimalSubscriber():
             
             # YAW
             elif keyboard.is_pressed('a'):
-                c = 0.5 * big_factor
+                a = 0.5 * big_factor
             elif keyboard.is_pressed('d'):
-                c = -0.5 * big_factor
+                a = -0.5 * big_factor
             
             # send the commands to the drone
             self.me.send_rc_control(int(a), int(b), int(c), int(d))
