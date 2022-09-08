@@ -1,4 +1,5 @@
 from imp import is_frozen_package
+from os import stat
 from time import sleep
 from turtle import down
 from numpy import imag
@@ -13,6 +14,7 @@ import argparse
 from math import atan2, cos, sin, sqrt, pi
 import numpy as np
 import keyboard
+from logger import Logger
 
 class MinimalSubscriber():
 
@@ -59,8 +61,11 @@ class MinimalSubscriber():
         }
 
         # start the keyboard thread
+        self.log = Logger("log1.csv")
+        self.command = "stand"
         self.keyboard_thread = Thread(target=self.keyboard_control)
-        self.keyboard_thread.start()
+        
+        self.log_thread = Thread(target=self.log_update)
 
         # connect to the Drone
         self.me = tello.Tello()
@@ -81,10 +86,13 @@ class MinimalSubscriber():
         self.aruco = ArucoDetection(self.ARUCO_DICT)
         # stream thread
         self.streamQ = FileVideoStreamTello(self.me)
+        self.draw_thread = Thread(target=self.draw)
+
+
+        self.keyboard_thread.start()
+        self.log_thread.start()
         self.streamQ.start()
         self.video_thread.start()
-
-        self.draw_thread = Thread(target=self.draw)
         self.draw_thread.start()
         
 
@@ -109,15 +117,18 @@ class MinimalSubscriber():
 
         while True:
             a, b, c, d = 0, 0, 0, 0
+            self.command = "stand"
 
             # Takeoff 
             if keyboard.is_pressed('space') and not tookoff:
                 tookoff = True
                 self.me.takeoff()
+                self.command = "takeoff"
             # Land
             elif keyboard.is_pressed('space') and tookoff:
                 tookoff = False
                 self.me.land()
+                self.command = "land"
             # Battery
             elif keyboard.is_pressed('b'):
                 print("Battery percentage:", self.me.get_battery())
@@ -134,29 +145,52 @@ class MinimalSubscriber():
             # Up / Down
             elif keyboard.is_pressed('up'):
                 c = 0.5 * medium_factor
+                self.command = "UP"
             elif keyboard.is_pressed("down"):
                 c = -0.5 * medium_factor
+                self.command = "DOWN"
             
             # Left / Right
             elif keyboard.is_pressed('left'):
                 d = -0.5 * big_factor
+                self.command = "LEFT"
             elif keyboard.is_pressed('right'):
                 d = 0.5 * big_factor
+                self.command = "RIGHT"
             
             # Forward / Backward
             elif keyboard.is_pressed('w'):
                 b = 0.5 * big_factor
+                self.command = "FORWARD"
             elif keyboard.is_pressed('s'):
                 b = -0.5 * big_factor
+                self.command = "BACKWARD"
             
             # YAW
             elif keyboard.is_pressed('a'):
                 a = 0.5 * big_factor
+                self.command = "YAW LEFT"
             elif keyboard.is_pressed('d'):
                 a = -0.5 * big_factor
+                self.command = "YAW RIGHT"
+            
+            # Save log
+            elif keyboard.is_pressed('m'):
+                self.log.save_log()
+                print("Log saved successfully!")
             
             # send the commands to the drone
             self.me.send_rc_control(int(a), int(b), int(c), int(d))
+
+
+    def log_update(self):
+        """
+            Update the state of the drone into the log file
+        """
+        state: dict = self.me.get_current_state()
+        if len(state) == 21:
+            self.log.add(state, self.command)
+            
 
 
     def video(self):
