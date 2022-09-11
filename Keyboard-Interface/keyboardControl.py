@@ -168,10 +168,10 @@ class MinimalSubscriber():
             
             # YAW
             elif keyboard.is_pressed('a'):
-                a = 0.5 * big_factor
+                a = -0.5 * big_factor
                 self.command = "YAW LEFT"
             elif keyboard.is_pressed('d'):
-                a = -0.5 * big_factor
+                a = 0.5 * big_factor
                 self.command = "YAW RIGHT"
             
             # Save log
