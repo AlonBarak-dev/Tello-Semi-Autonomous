@@ -231,22 +231,18 @@ class FollowObject():
 
             h,w = img.shape[:2]
             # handle detection visualization
-            if self.det is not None:            
-                for val in self.det:
-                    if ANONIMUS:    
-                        cv2.rectangle(img,(val[0],val[1]),(val[0]+val[2],val[1]+val[3]),[0,255,0],-1)
-                    else:
-                        cv2.rectangle(img,(val[0],val[1]),(val[0]+val[2],val[1]+val[3]),[0,255,0],2)
+            # if self.det is not None:            
+            #     for val in self.det:
+            #         if ANONIMUS:    
+            #             cv2.rectangle(img,(val[0],val[1]),(val[0]+val[2],val[1]+val[3]),[0,255,0],-1)
+            #         else:
+            #             cv2.rectangle(img,(val[0],val[1]),(val[0]+val[2],val[1]+val[3]),[0,255,0],2)
                     
-                    cv2.circle(img,(self.tp[0],self.tp[1]),3,[0,0,255],-1)
-                cv2.circle(img,(int(w/2),int(h/2)),4,[0,255,0],1)
-                cv2.line(img,(int(w/2),int(h/2)),(self.tp[0],self.tp[1]),[0,255,0],2)
+            #         cv2.circle(img,(self.tp[0],self.tp[1]),3,[0,0,255],-1)
+            #     cv2.circle(img,(int(w/2),int(h/2)),4,[0,255,0],1)
+            #     cv2.line(img,(int(w/2),int(h/2)),(self.tp[0],self.tp[1]),[0,255,0],2)
 
             
             for id, coord in zip(ids, corners):
-                print(id)
                 coord = coord.reshape((4,2))
-                print(id)
                 cv2.putText(img, str(id), (int(w/2), int(h/2)), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2)
-                print(id)
-                print(img)
