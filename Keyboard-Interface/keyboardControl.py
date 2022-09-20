@@ -16,7 +16,7 @@ class MinimalSubscriber():
 
         self.ARUCO_DICT = {
             "DICT_4X4_50": cv2.aruco.DICT_4X4_50,
-            "DICT_4X4_100": cv2.aruco.DICT_4X4_100,
+            "DICT_4X4_100": cv2.aruco.DICT_4X4_100,     # the one we use!
             "DICT_4X4_250": cv2.aruco.DICT_4X4_250,
             "DICT_4X4_1000": cv2.aruco.DICT_4X4_1000,
             "DICT_5X5_50": cv2.aruco.DICT_5X5_50,
@@ -41,6 +41,7 @@ class MinimalSubscriber():
         # start the keyboard thread
         self.log = Logger("log1.csv")
         self.command = "stand"
+        self.frame_counter = 0
         self.keyboard_thread = Thread(target=self.keyboard_control)
         
         self.log_thread = Thread(target=self.log_update)
@@ -163,11 +164,12 @@ class MinimalSubscriber():
 
     def log_update(self):
         """
-            Update the state of the drone into the log file
+            Update the state of the drone into the log file.
         """
         state: dict = self.me.get_current_state()
         if len(state) == 21:
-            self.log.add(state, self.command)
+            self.log.add(state, self.command, self.frame_counter)
+            cv2.imwrite("frames/frame_"+str(self.frame_counter)+".jpg", self.img)
             
 
 
@@ -184,6 +186,7 @@ class MinimalSubscriber():
                 imghud = img.copy()
                 self.aruco.set_image_to_process(img)
                 self.ids, self.corners = self.aruco.draw_detection(image=imghud)
+                self.frame_counter += 1
                 self.img = imghud
                 
             except Exception:

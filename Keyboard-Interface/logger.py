@@ -7,10 +7,10 @@ class Logger:
     def __init__(self, filename: str):
         
         self.filename = filename
-        self.df = pd.DataFrame(columns=['time', 'command', 'pitch', 'roll', 'Yaw', 'height', 'Vx', 'Vy', 'Vz', 'battery'])
+        self.df = pd.DataFrame(columns=['time','frame#' ,'command', 'pitch', 'roll', 'Yaw', 'height', 'Vx', 'Vy', 'Vz', 'battery'])
 
 
-    def add(self, data: dict, command: str):
+    def add(self, data: dict, command: str, frame_num):
         """
             Given a list of all parametrs, add them to the DF.
         """
@@ -23,7 +23,7 @@ class Logger:
         vy = data['vgy']
         vz = data['vgz']
         battery = data['bat']
-        row = [curr_time, command, pitch, roll, yaw, height, vx, vy, vz, battery]
+        row = [curr_time, frame_num, command, pitch, roll, yaw, height, vx, vy, vz, battery]
         print(row)
         self.df.loc[len(self.df)] = row
     
