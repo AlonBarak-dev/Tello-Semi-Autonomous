@@ -1,16 +1,10 @@
-from imp import is_frozen_package
-from os import stat
-from time import sleep
-from turtle import down
 from numpy import imag
 from Aruco_detection import ArucoDetection
-from followobject import FollowObject
 from Tello_video import FileVideoStreamTello
 from socket import *
 from djitellopy import tello
 from threading import Thread
 import cv2
-import argparse
 from math import atan2, cos, sin, sqrt, pi
 import numpy as np
 import keyboard
@@ -19,22 +13,6 @@ from logger import Logger
 class MinimalSubscriber():
 
     def __init__(self):
-
-        # input arguments
-        parser = argparse.ArgumentParser(description='Tello Object tracker. keys: t-takeoff, l-land, v-video, q-quit w-up, s-down, a-ccw rotate, d-cw rotate\n')
-        parser.add_argument('-model', type=str, help='DNN model caffe or tensorflow, see data folder', default='')
-        parser.add_argument('-proto', type=str, help='Prototxt file, see data folder', default='')
-        parser.add_argument('-obj', type=str, help='Type of object to track. [Face, Person], default = Face', default='Face')
-        parser.add_argument('-dconf', type=float, help='Detection confidence, default = 0.7', default=0.4)
-        parser.add_argument('-debug', type=bool, help='Enable debug, lists messages in console', default=False)
-        parser.add_argument('-video', type=str, help='Use as inputs a video file, no tello needed, debug must be True', default="")
-        parser.add_argument('-vsize', type=list, help='Video size received from tello', default=(640,480))
-        parser.add_argument("-type", type=str,default="DICT_5X5_100", help="type of ArUCo tag to detect")
-        parser.add_argument('-th', type=bool, help='Horizontal tracking', default=False)
-        parser.add_argument('-tv', type=bool, help='Vertical tracking', default=True)
-        parser.add_argument('-td', type=bool, help='Distance tracking', default=True)
-        parser.add_argument('-tr', type=bool, help='Rotation tracking', default=True)
-        self.args = parser.parse_args()
 
         self.ARUCO_DICT = {
             "DICT_4X4_50": cv2.aruco.DICT_4X4_50,

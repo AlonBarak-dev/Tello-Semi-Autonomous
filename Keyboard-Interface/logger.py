@@ -1,4 +1,3 @@
-from sqlite3 import Row
 import pandas as pd
 import djitellopy
 import time

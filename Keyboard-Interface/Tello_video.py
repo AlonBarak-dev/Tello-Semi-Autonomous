@@ -1,6 +1,4 @@
 from threading import Thread
-import sys
-import cv2
 from queue import Queue
 from djitellopy import tello
 

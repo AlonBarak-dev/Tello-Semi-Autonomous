@@ -9,8 +9,7 @@
 ## Main Events
 - TelloAI-101 : Introduction meeting @ 24/10/22 <br>
 - TelloAI-102 : Qualification stage @ 31/10/22 <br>
-- TelloAI-103 : Semi-Finals stage @ ?/11/22 <br>
-- TelloAI-104 : Final stage @ 7/11/22 <br>
+- TelloAI-103 : Final stage @ 7/11/22 <br>
 
 ## Prizes:
 - Winning team - XXX NIS
@@ -40,54 +39,25 @@
 ## Starting-Kit
 This repo contains code that knows how to communicate with the Tello drone, <br>
 Receive information and video streams from him in real time. <br>
-In addition, a code used in ROS2 is attached that allows you to <br>
-control the drone with the help of a wireless Xbox remote while flying <br> 
+In addition, a code used in Python attached that allows you to <br>
+control the drone with the help of your Keyboard while flying <br> 
 without interfering with the main algorithm (may save your drone). <br>
 In the code we used opencv to detect Aruco code - feel free to use something else. <br>
 
 
-## How to use the Repo
-  - Note: I've wrote the code using ROS2, meaning that I've used additional software other than Python, 
-          it is optinal to use ROS2 (Xbox controller).
-          Therefore, one can read the code itself (ROS2 is a small part) and gain understaning on the Tello API from it. <br>
-          
-  ### Prerequisites
+  ### Prerequisites & Python libraries
   * djitellopy - `pip install djitellopy`
   * OpenCV - `pip install opencv-python`
   * NumPy - `pip install numpy`
-  * ROS2 foxy
-  * colcon
+  * keyboard - `pip install keyboard` - might request sudo permission.
+  * threading
+  * socket
+  * Queue
+  * pandas
+  * time
   
-  ## ROS2 Interface
-  
-  ```ruby
-  cd ROS2-Interface
-  ```
-  
-  ### Build
-  In the directory of your package, use colcon to build the package:
-  ```ruby
-  colcon build
-  ```
-  ### How To Use
-  1. Open a terminal, run the joy node:
-  ```ruby
-  ros2 run joy joy_node
-  ```
-  2. In a new terminal, move to the package's built directory
-  ```ruby
-  cd <directory_of_package>
-  ```
-  3. Then source the setup script:
-  ```ruby
-  source install/setup.bash
-  ```
-  4. Run the package
-  ```ruby
-  ros2 run tello_controller object_track_xbox
-  ```
      
-  ## Python only (Keyboard) Interface
+  ## Keyboard Interface
   
   ```ruby
   cd Keyboard-Interface
@@ -96,6 +66,10 @@ In the code we used opencv to detect Aruco code - feel free to use something els
   ```ruby
   sudo python3 keyboardControl.py
   ```
+
+  ## Link to our YouTube channel
+  https://www.youtube.com/watch?v=892dmWhur80&list=PLL4BDIvakL8p3JlQrc3qWykljuYtWlZCS
+
 
 #### Helped me in the making of this Repository:
 - https://github.com/fvilmos/tello_object_tracking <br>
