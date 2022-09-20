@@ -189,8 +189,8 @@ class MinimalSubscriber():
             except Exception:
                 break
             
-            cv2.imshow("CleanTello", img)
-            cv2.imshow("TelloCamera",self.img)
+            cv2.imshow("CleanView", img)
+            cv2.imshow("ArucoView",self.img)
             k = cv2.waitKey(1)
 
     def draw(self):

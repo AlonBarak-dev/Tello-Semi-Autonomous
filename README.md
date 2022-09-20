@@ -20,7 +20,6 @@
 - Good Knowledge in Python.
 - Getting familiar with the Tello SDK.
 - Basic understanding of Aruco code.
-- Basic knowledge in ROS2 (OPT)
 - A winning team!
 
 ## Links to expand knowledge on the required subjects
@@ -45,7 +44,7 @@ without interfering with the main algorithm (may save your drone). <br>
 In the code we used opencv to detect Aruco code - feel free to use something else. <br>
 
 
-  ### Prerequisites & Python libraries
+  ### Python libraries
   * djitellopy - `pip install djitellopy`
   * OpenCV - `pip install opencv-python`
   * NumPy - `pip install numpy`

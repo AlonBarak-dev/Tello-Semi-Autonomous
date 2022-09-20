@@ -25,7 +25,6 @@ class ArucoDetection:
 
 
         self.detection = safethread.SafeThread(target=self.detect_aruco).start()
-        self.orientation = safethread.SafeThread(target=self.getOrientation_detection).start()
 
     def set_image_to_process(self, img):
         """Image to process
@@ -35,93 +34,6 @@ class ArucoDetection:
         """
         self.img = img
     
-    def drawAxis(self, img, p_, q_, color, scale):
-        p = list(p_)
-        q = list(q_)
-        # print(p, q)
-        
-        ## [visualization1]
-        angle = atan2(p[1] - q[1], p[0] - q[0]) # angle in radians
-        hypotenuse = sqrt((p[1] - q[1]) * (p[1] - q[1]) + (p[0] - q[0]) * (p[0] - q[0]))
-        
-        # Here we lengthen the arrow by a factor of scale
-        q[0] = p[0] - scale * hypotenuse * cos(angle)
-        q[1] = p[1] - scale * hypotenuse * sin(angle)
-        cv2.line(img, (int(p[0]), int(p[1])), (int(q[0]), int(q[1])), color, 3, cv2.LINE_AA)
-        
-        # create the arrow hooks
-        p[0] = q[0] + 9 * cos(angle + pi / 4)
-        p[1] = q[1] + 9 * sin(angle + pi / 4)
-        cv2.line(img, (int(p[0]), int(p[1])), (int(q[0]), int(q[1])), color, 3, cv2.LINE_AA)
-        
-        p[0] = q[0] + 9 * cos(angle - pi / 4)
-        p[1] = q[1] + 9 * sin(angle - pi / 4)
-        cv2.line(img, (int(p[0]), int(p[1])), (int(q[0]), int(q[1])), color, 3, cv2.LINE_AA)
-
-    def getOrientation(self, pts, img):
-        ## [pca]
-        # Construct a buffer used by the pca analysis
-        sz = len(pts)
-        data_pts = np.empty((sz, 2), dtype=np.float64)
-        for i in range(data_pts.shape[0]):
-            data_pts[i,0] = pts[i,0,0]
-            data_pts[i,1] = pts[i,0,1]
-        
-        # Perform PCA analysis
-        mean = np.empty((0))
-        mean, eigenvectors, eigenvalues = cv2.PCACompute2(data_pts, mean)
-        
-        # Store the center of the object
-        # cntr = (int(mean[0,0]), int(mean[0,1]))
-        ## [pca]
-        
-        ## [visualization]
-        # Draw the principal components
-        # cv2.circle(img, cntr, 3, (255, 0, 255), 2)
-        # p1 = (cntr[0] + 0.02 * eigenvectors[0,0] * eigenvalues[0,0], cntr[1] + 0.02 * eigenvectors[0,1] * eigenvalues[0,0])
-        # p2 = (cntr[0] - 0.02 * eigenvectors[1,0] * eigenvalues[1,0], cntr[1] - 0.02 * eigenvectors[1,1] * eigenvalues[1,0])
-        # self.drawAxis(img, cntr, p1, (255, 255, 0), 1)
-        # self.drawAxis(img, cntr, p2, (0, 0, 255), 5)
-        
-        angle = atan2(eigenvectors[0,1], eigenvectors[0,0]) # orientation in radians
-        ## [visualization]
-        
-        # Label with the rotation angle
-        # label = "  Rotation Angle: " + str(-int(np.rad2deg(angle)) - 90) + " degrees"
-        # textbox = cv2.rectangle(img, (cntr[0], cntr[1]-25), (cntr[0] + 250, cntr[1] + 10), (255,255,255), -1)
-        # cv2.putText(img, label, (cntr[0], cntr[1]), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,0,0), 1, cv2.LINE_AA)
-        print(angle)
-        return angle
-
-    def getOrientation_detection(self):
-        """
-            This method finds the contours in the image
-        """
-        # time base
-        self.ticker.wait(0.005)
-
-        if self.img is not None:
-            image = self.img.copy()
-        
-            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    
-            # Convert image to binary
-            _, bw = cv2.threshold(gray, 50, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
-            
-            # Find all the contours in the thresholded image
-            contours, _ = cv2.findContours(bw, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)
-            pts_list = []
-            for pts in list(contours):
-                for box in self.corners:
-                    box = box.reshape((4,2))
-                    if pts[0] > box[0][0] and pts[0] < box[1][0]:
-                        # if pts[1] < box[0][1] and pts[1] > box[3][1]:
-                        pts_list.append(pts)
-            self.contours = pts_list
-        
-        self.cycle_counter += 1
-
-
     def detect_aruco(self):
         """
             This method detect ArUco code from all types.
