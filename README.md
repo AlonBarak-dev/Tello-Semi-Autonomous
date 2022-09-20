@@ -57,6 +57,10 @@ In the code we used opencv to detect Aruco code - feel free to use something els
   
      
   ## Keyboard Interface
+
+  ```ruby
+  python -m pip install -r requirements.txt
+  ```
   
   ```ruby
   cd Keyboard-Interface

@@ -1,0 +1,5 @@
+djitellopy==2.4.0
+keyboard==0.13.5
+numpy==1.23.3
+opencv-contrib-python==4.6.0.66
+pandas==1.4.3
