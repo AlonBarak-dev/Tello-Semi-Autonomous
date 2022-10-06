@@ -13,8 +13,8 @@
 
 ## Prizes:
 - Winning team - 8,000 NIS
-- Second team - 4,000 XXX NIS
-- Third team - 2,000 XXX NIS
+- Second team - 4,000 NIS
+- Third team - 2,000 NIS
 
 ## Prerequisites
 - Good Knowledge in Python.
