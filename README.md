@@ -12,9 +12,9 @@
 - TelloAI-103 : Final stage @ 7/11/22 <br>
 
 ## Prizes:
-- Winning team - XXX NIS
-- Second team - 50% XXX NIS
-- Third team - 25% XXX NIS
+- Winning team - 8,000 NIS
+- Second team - 4,000 XXX NIS
+- Third team - 2,000 XXX NIS
 
 ## Prerequisites
 - Good Knowledge in Python.
