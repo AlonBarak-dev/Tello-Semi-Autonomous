@@ -52,16 +52,16 @@ class ArucoDetection:
             
             corners_list = []
             ids_list = []
-            for dict in self.ARUCO_DICT:
-                # arucoDict = cv2.aruco.Dictionary_get(self.ARUCO_DICT[self.args.type])
-                arucoDict = cv2.aruco.Dictionary_get(self.ARUCO_DICT[dict])
-                arucoParams = cv2.aruco.DetectorParameters_create()
-                (corners, ids, rejected) = cv2.aruco.detectMarkers(image, arucoDict, parameters=arucoParams)
-                if ids is not None:
-                    for c, i in zip(corners, ids):
-                        ids_list.append(i)
-                        corners_list.append(c)
-                        print("Code: ", i , " Coords: ", c)
+            # for dict in self.ARUCO_DICT:
+            # arucoDict = cv2.aruco.Dictionary_get(self.ARUCO_DICT[self.args.type])
+            arucoDict = cv2.aruco.Dictionary_get(self.ARUCO_DICT["DICT_4X4_100"])
+            arucoParams = cv2.aruco.DetectorParameters_create()
+            (corners, ids, rejected) = cv2.aruco.detectMarkers(image, arucoDict, parameters=arucoParams)
+            if ids is not None:
+                for c, i in zip(corners, ids):
+                    ids_list.append(i)
+                    corners_list.append(c)
+                    print("Code: ", i , " Coords: ", c)
                     
             self.corners = corners_list
             self.ids = ids_list
@@ -73,22 +73,21 @@ class ArucoDetection:
         """
             This method draw the latest detections on the given image.
         """
-        contours = self.contours
-        print(len(contours))
-        for i, c in enumerate(contours):
+        # contours = self.contours
+        # for i, c in enumerate(contours):
         
-            # Calculate the area of each contour
-            area = cv2.contourArea(c)
+        #     # Calculate the area of each contour
+        #     area = cv2.contourArea(c)
             
-            # Ignore contours that are too small or too large
-            if area < 3700 or 100000 < area:
-                continue
+        #     # Ignore contours that are too small or too large
+        #     if area < 3700 or 100000 < area:
+        #         continue
             
-            # Draw each contour only for visualisation purposes
-            cv2.drawContours(image, contours, i, (0, 0, 255), 2)
+        #     # Draw each contour only for visualisation purposes
+        #     cv2.drawContours(image, contours, i, (0, 0, 255), 2)
             
-            # Find the orientation of each shape
-            self.getOrientation(c, image)
+        #     # Find the orientation of each shape
+        #     self.getOrientation(c, image)
 
         return self.ids, self.corners
 

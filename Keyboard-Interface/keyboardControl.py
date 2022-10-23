@@ -69,10 +69,10 @@ class MinimalSubscriber():
 
 
         self.keyboard_thread.start()
-        self.log_thread.start()
+        # self.log_thread.start()
         self.streamQ.start()
         self.video_thread.start()
-        self.draw_thread.start()
+        # self.draw_thread.start()
         
 
     def keyboard_control(self):
@@ -166,10 +166,11 @@ class MinimalSubscriber():
         """
             Update the state of the drone into the log file.
         """
-        state: dict = self.me.get_current_state()
-        if len(state) == 21:
-            self.log.add(state, self.command, self.frame_counter)
-            cv2.imwrite("frames/frame_"+str(self.frame_counter)+".jpg", self.img)
+        while True:
+            state: dict = self.me.get_current_state()
+            if len(state) == 21:
+                self.log.add(state, self.command, self.frame_counter)
+                cv2.imwrite("frames/frame_"+str(self.frame_counter)+".jpg", self.img)
             
 
 
@@ -185,14 +186,13 @@ class MinimalSubscriber():
                 # wait for valid frame
                 imghud = img.copy()
                 self.aruco.set_image_to_process(img)
-                self.ids, self.corners = self.aruco.draw_detection(image=imghud)
+                self.ids, self.corners = self.aruco.draw_detection(img)
                 self.frame_counter += 1
                 self.img = imghud
                 
             except Exception:
                 break
             
-            cv2.imshow("CleanView", img)
             cv2.imshow("ArucoView",self.img)
             k = cv2.waitKey(1)
 
