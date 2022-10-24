@@ -9,7 +9,7 @@
 ## Main Events
 - TelloAI-101 : Introduction meeting @ 24/10/22 <br>
 - TelloAI-102 : Qualification stage @ 31/10/22 <br>
-- TelloAI-103 : Final stage @ 7/11/22 <br>
+- TelloAI-103 : Final stage @ 10/11/22 <br>
 
 ## Prizes:
 - Winning team - 8,000 NIS
